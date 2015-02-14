@@ -16,4 +16,4 @@ var cli = meow({
 var url = cli.flags.url;
 var pattern = cli.flags.pattern;
 
-fromUrl(url);
+fromUrl(url, pattern);
