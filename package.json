@@ -1,0 +1,44 @@
+{
+  "name": "from-url",
+  "version": "0.0.0",
+  "description": "Check assets hostname",
+  "homepage": "https://github.com/92bondstreet/from-url",
+  "author": {
+    "name": "Yassine AZZOUT",
+    "email": "yassine.azzout@gmail.com",
+    "url": "yass.io"
+  },
+  "repository": "92bondstreet/from-url",
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "from-url",
+    "url",
+    "hostname",
+    "cdn",
+    "resources",
+    "assets"
+  ],
+  "dependencies": {
+    "meow": "^2.0.0"
+  },
+  "devDependencies": {
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-eslint": "^6.0.0",
+    "load-grunt-tasks": "^1.0.0",
+    "time-grunt": "^1.0.0",
+    "grunt-mocha-cli": "^1.11.0"
+    
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "bin": {
+    "from-url": "cli.js"
+  }
+}
