@@ -4,12 +4,15 @@
 var meow = require('meow');
 var fromUrl = require('./');
 var chalk = require('chalk');
-
+var logSymbols = require('log-symbols');
 
 /**
  * Print properties
  */
 var info = chalk.yellow;
+var success = logSymbols.success;
+var error = logSymbols.error;
+
 
 var cli = meow({
   'help': [
@@ -32,7 +35,21 @@ var stdout = function stdout(err, assets) {
   if (err) {
     console.log(err.stack);
   }
-  console.log(assets);
+
+  process.stdout.write(info('\n\nRequested resources:\n\n'));
+  for (var asset in assets){
+    log(asset,assets[asset]);
+  }
+  process.stdout.write(info('\nDone.\n'));
+};
+
+var log = function log(asset, match){
+  if(match === true){
+    console.log(success, asset);
+  }
+  else{
+    console.log(error, asset);
+  }
 };
 
 

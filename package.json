@@ -24,6 +24,7 @@
   ],
   "dependencies": {
     "chalk": "^0.5.1",
+    "log-symbols": "^1.0.1",
     "meow": "^2.0.0",
     "nightmare": "^1.7.0"
   },

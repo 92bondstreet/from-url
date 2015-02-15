@@ -16,16 +16,16 @@ $ npm install --save from-url
 ## Usage
 
 ```js
-var from-url = require('from-url');
+var fromUrl = require('from-url');
 
-from-url('https://github.com/','assets-cdn.github.com', function(err, assets) {
+fromUrl('https://github.com/','assets-cdn.github.com', function(err, assets) {
   for(var url in assets){
     console.log(assets[url]);
     //=> true || false
   }
 });
 
-from-url('https://github.com/','cdn', function(err, assets) {
+fromUrl('https://github.com/','cdn', function(err, assets) {
   for(var url in assets){
     console.log(assets[url]);
     //=> true || false
