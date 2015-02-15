@@ -23,7 +23,9 @@
     "assets"
   ],
   "dependencies": {
-    "meow": "^2.0.0"
+    "chalk": "^0.5.1",
+    "meow": "^2.0.0",
+    "nightmare": "^1.7.0"
   },
   "devDependencies": {
     "grunt-cli": "^0.1.13",
@@ -33,10 +35,9 @@
     "load-grunt-tasks": "^1.0.0",
     "time-grunt": "^1.0.0",
     "grunt-mocha-cli": "^1.11.0"
-    
   },
   "scripts": {
-    "test": "grunt"
+    "test": "grunt mochacli"
   },
   "bin": {
     "from-url": "cli.js"

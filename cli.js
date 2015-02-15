@@ -1,7 +1,15 @@
 #!/usr/bin/env node
+
 'use strict';
 var meow = require('meow');
 var fromUrl = require('./');
+var chalk = require('chalk');
+
+
+/**
+ * Print properties
+ */
+var info = chalk.yellow;
 
 var cli = meow({
   'help': [
@@ -16,4 +24,20 @@ var cli = meow({
 var url = cli.flags.url;
 var pattern = cli.flags.pattern;
 
-fromUrl(url, pattern);
+/**
+ * Print list of assets
+ */
+
+var stdout = function stdout(err, assets) {
+  if (err) {
+    console.log(err.stack);
+  }
+  console.log(assets);
+};
+
+
+/**
+ * Start
+ */
+process.stdout.write(info('Fetching ' + url + ' in progress\n'));
+fromUrl(url, pattern, stdout);
