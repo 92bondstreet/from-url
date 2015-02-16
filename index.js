@@ -16,7 +16,7 @@ var chalk = require('chalk');
 var wait = chalk.yellow('.');
 
 /**
- * from-url Constructor
+ * FromUrl Constructor
  *
  * @constructor FromUrl
  * @param {String} url  to fetch
@@ -25,7 +25,7 @@ var wait = chalk.yellow('.');
  * @return {FromUrl} this
  */
 
-var FromUrl = function FromUrl(url, pattern, callback) {
+var FromUrl = module.exports = function(url, pattern, callback) {
   if (!(this instanceof FromUrl)) {
     return new FromUrl(url, pattern, callback);
   }
@@ -33,6 +33,23 @@ var FromUrl = function FromUrl(url, pattern, callback) {
   this._goto(url, pattern, callback);
   return this;
 };
+
+
+/**
+ * Expose the FromUrl Constructor
+ *
+ * @method createFromUrl
+ * @param {String} url  to fetch
+ * @param {String} pattern to check
+ * @param {Function} callback once page loaded
+ * @return {FromUrl} this
+ */
+var createFromUrl = function createFromUrl(url, pattern, callback) {
+  return new FromUrl(url, pattern, callback);
+};
+
+module.exports.createFromUrl = createFromUrl;
+
 
 /**
  * FromUrl prototype and properties
@@ -98,5 +115,3 @@ prototype._fetch = function(pattern, requestData) {
 
   return this;
 };
-
-module.exports = FromUrl;

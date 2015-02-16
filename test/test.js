@@ -1,7 +1,8 @@
 /*global describe, it */
 'use strict';
 var assert = require('assert');
-var fromUrl = require('../index')();
+// We use createFromUrl to expose the constructor
+var from = require('../index').createFromUrl();
 
 /**
  * Some values for testing
@@ -17,26 +18,26 @@ describe('from-url node module', function () {
 
   describe('constructor', function(){
     it('should be a FromUrl instance', function () {
-      assert.equal(fromUrl instanceof fromUrl.FromUrl, true, '');
+      assert.equal(from instanceof from.FromUrl, true, '');
     });
   });
 
 
   describe('_match()', function(){
     it('should detect matching between url and hostname', function () {
-      var match = fromUrl._match(asset, hostname);
+      var match = from._match(asset, hostname);
       assert.equal(match, true, hostname + ' matches with ' + asset);
     });
     it('should detect matching between url and pattern', function () {
-      var match = fromUrl._match(asset, pattern);
+      var match = from._match(asset, pattern);
       assert.equal(match, true, hostname + ' matches with ' + asset);
     });
     it('should detect a non-matching between url and hostname', function () {
-      var match = fromUrl._match(asset, libHostname);
+      var match = from._match(asset, libHostname);
       assert.equal(match, false, libHostname + ' doesn\'t match with ' + asset);
     });
     it('should detect a non-matching between url and pattern', function () {
-      var match = fromUrl._match(asset, libPattern);
+      var match = from._match(asset, libPattern);
       assert.equal(match, false, libPattern + ' doesn\'t match with ' + asset);
     });
   });
@@ -44,8 +45,8 @@ describe('from-url node module', function () {
   describe('_fetch()', function(){
     it('should save the url with matching value', function () {
       var assets = [];
-      fromUrl._fetch(hostname, {'url': asset});
-      assets = fromUrl._assets;
+      from._fetch(hostname, {'url': asset});
+      assets = from._assets;
       assert.ok(assets[asset], 'url saved');
     });
   });

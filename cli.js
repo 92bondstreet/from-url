@@ -2,7 +2,7 @@
 
 'use strict';
 var meow = require('meow');
-var fromUrl = require('./');
+var from = require('./index');
 var chalk = require('chalk');
 var logSymbols = require('log-symbols');
 
@@ -57,4 +57,4 @@ var log = function log(asset, match){
  * Start
  */
 process.stdout.write(info('Fetching ' + url + ' in progress\n'));
-fromUrl(url, pattern, stdout);
+from(url, pattern, stdout);
