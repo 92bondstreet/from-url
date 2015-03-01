@@ -44,14 +44,22 @@ var stdout = function stdout(err, assets) {
 };
 
 var log = function log(asset, match){
-  if(match === true){
+  if (match === true){
     console.log(success, asset);
-  }
-  else{
+  } else {
     console.log(error, asset);
   }
 };
 
+
+
+/**
+ * Check arguments and fallback to the cli Helper
+ */
+
+if (!url || !pattern){
+  cli.showHelp();
+}
 
 /**
  * Start
