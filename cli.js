@@ -4,14 +4,12 @@
 var meow = require('meow');
 var from = require('./index');
 var chalk = require('chalk');
-var logSymbols = require('log-symbols');
+var stdout = require('./stdout');
 
 /**
  * Print properties
  */
 var info = chalk.yellow;
-var success = logSymbols.success;
-var error = logSymbols.error;
 
 
 var cli = meow({
@@ -26,32 +24,6 @@ var cli = meow({
 
 var url = cli.flags.url;
 var pattern = cli.flags.pattern;
-
-/**
- * Print list of assets
- */
-
-var stdout = function stdout(err, assets) {
-  if (err) {
-    console.log(err.stack);
-  }
-
-  process.stdout.write(info('\n\nRequested resources:\n\n'));
-  for (var asset in assets){
-    log(asset,assets[asset]);
-  }
-  process.stdout.write(info('\nDone.\n'));
-};
-
-var log = function log(asset, match){
-  if (match === true){
-    console.log(success, asset);
-  } else {
-    console.log(error, asset);
-  }
-};
-
-
 
 /**
  * Check arguments and fallback to the cli Helper
