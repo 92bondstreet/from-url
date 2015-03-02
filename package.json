@@ -1,6 +1,6 @@
 {
   "name": "from-url",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Check assets hostname",
   "homepage": "https://github.com/92bondstreet/from-url",
   "author": {
@@ -19,19 +19,19 @@
     "assets"
   ],
   "dependencies": {
-    "chalk": "^0.5.1",
-    "log-symbols": "^1.0.1",
-    "meow": "^2.0.0",
+    "chalk": "^1.0.0",
+    "log-symbols": "^1.0.2",
+    "meow": "^3.1.0",
     "nightmare": "^1.7.0"
   },
   "devDependencies": {
     "grunt-cli": "^0.1.13",
     "grunt-contrib-nodeunit": "^0.4.1",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-eslint": "^6.0.0",
-    "load-grunt-tasks": "^1.0.0",
-    "time-grunt": "^1.0.0",
-    "grunt-mocha-cli": "^1.11.0"
+    "grunt-eslint": "^7.0.1",
+    "load-grunt-tasks": "^3.1.0",
+    "time-grunt": "^1.1.0",
+    "grunt-mocha-cli": "^1.12.0"
   },
   "scripts": {
     "test": "grunt mochacli"

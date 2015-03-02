@@ -1,7 +1,6 @@
 # from-url
-<!---
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image]
--->
+
 > Check assets hostname
 
 ## Keynote
