@@ -2,9 +2,9 @@
 
 'use strict';
 var meow = require('meow');
-var from = require('./index');
+var from = require('./');
 var chalk = require('chalk');
-var stdout = require('./stdout');
+var stdout = require('./lib/stdout');
 
 /**
  * Print properties

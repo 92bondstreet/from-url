@@ -10,10 +10,6 @@
   },
   "repository": "92bondstreet/from-url",
   "license": "MIT",
-  "files": [
-    "index.js",
-    "cli.js"
-  ],
   "keywords": [
     "from-url",
     "url",
