@@ -45,6 +45,19 @@ $ from-url --help
 
 ```
 
+### Options
+
+##### `--url`
+
+The given url
+
+#### `--pattern`
+
+Check the pattern with the resources requested
+
+#### `--color`
+
+Colorize the output
 
 ## License
 

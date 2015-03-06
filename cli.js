@@ -15,7 +15,7 @@ var info = chalk.yellow;
 var cli = meow({
   'help': [
     'Usage',
-    '  from-url --url=<input> --pattern=<input>',
+    '  from-url --url=<input> --pattern=<input> --color',
     '',
     'Example',
     '  from-url --url=https://github.com/ --pattern=assets-cdn.github.com'
@@ -24,6 +24,7 @@ var cli = meow({
 
 var url = cli.flags.url;
 var pattern = cli.flags.pattern;
+var colorize = cli.flags.color;
 
 /**
  * Check arguments and fallback to the cli Helper
@@ -33,8 +34,15 @@ if (!url || !pattern){
   cli.showHelp();
 }
 
+
+/**
+ * Log with symbols or force colors
+ */
+
+var log = colorize ? stdout.colors : stdout;
+
 /**
  * Start
  */
 process.stdout.write(info('Fetching ' + url + ' in progress\n'));
-from(url, pattern, stdout);
+from(url, pattern, log);
